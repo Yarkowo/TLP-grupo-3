@@ -4,6 +4,9 @@ from django.shortcuts import render
 
 def index(request):
 
+    respuestaSegmento = request.GET.get('Segmento')
+    respuestaTipo = request.GET.get('Tipo')
+
     segmentos = ["Comunidad USM","Estudiante","Profesor","Jefe de Carrera"]
     tipos = ["Vacaciones","Feriado","Suspensión de actividades","Suspensión de actividades PM","Periodo Lectivo","Suspensión de evaluaciones","Ceremonia","EDDA","Evaluación","Ayudantías","Hito Académico","Secretaría Académica","OAI",]
     data={
