@@ -1,9 +1,9 @@
 <div class="col-5">
     <form method="GET" action=""></form>
         <select class="form-select" aria-label="Default select example" name="Segmento" onchange="this.form.submit()">
-            <option value="Segmento" {% if respuesta == Segmento %} selected {% endif %}>Segmento</option>
+            <option value="Segmento" {% if respuestaSegmento == Segmento %} selected {% endif %}>Segmento</option>
             {%for Segmento in Segmentos%}
-            <option value={{Segmento}} {% if respuesta == Segmento %} selected {% endif %} >{{Segmento}}</option>
+            <option value={{Segmento}} {% if respuestaSegmento == Segmento %} selected {% endif %} >{{Segmento}}</option>
             {%endfor%}
         </select>
     </form>
@@ -14,9 +14,9 @@
 <div class="col-5">
     <form method="GET" action=""></form>
         <select class="form-select" aria-label="Default select example"  name="Tipo" onchange="this.form.submit()">
-            <option value="Tipo"{% if respuesta == Tipo %} selected {% endif %}>Tipo</option>
+            <option value="Tipo"{% if respuestaTipo == Tipo %} selected {% endif %}>Tipo</option>
             {%for Tipo in Tipos%}
-            <option value={{Tipo}} {% if respuesta == Tipo %} selected {% endif %} >{{Tipo}}</option>
+            <option value={{Tipo}} {% if respuestaTipo == Tipo %} selected {% endif %} >{{Tipo}}</option>
             {%endfor%}
         </select>
     </form>
