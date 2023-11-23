@@ -1,5 +1,10 @@
-div{
+div.row{
+    text-align: center;
+    align-items:center;
+    margin-top: 0.5vw;
     margin-bottom: 0.5vw;
+    margin-left: 0vw;
+    margin-right: 0vw;
 }
 
 #logo{
@@ -19,4 +24,14 @@ div{
 }
 footer{
     background-color:bisque;
+}
+
+div.card{
+    text-align: center;
+    align-items:center;
+    margin-top: 0.5vw;
+    margin-bottom: 0.5vw;
+    margin-left: 0vw;
+    margin-right: 0vw;
+    margin-left: 0vw;
 }
