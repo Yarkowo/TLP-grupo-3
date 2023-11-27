@@ -7,10 +7,12 @@ def index(request):
     respuestaSegmento = request.GET.get('Segmento')
     respuestaTipo = request.GET.get('Tipo')
 
-    segmentos = ["Comunidad USM","Estudiante","Profesor","Jefe de Carrera"]
-    tipos = ["Vacaciones","Feriado","Suspensión de actividades","Suspensión de actividades PM","Periodo Lectivo","Suspensión de evaluaciones","Ceremonia","EDDA","Evaluación","Ayudantías","Hito Académico","Secretaría Académica","OAI",]
+    segmentos = ["Comunidad_USM","Estudiante","Profesor","Jefe_de_Carrera"]
+    tipos = ["Vacaciones","Feriado","Suspensión_de_actividades","Suspensión_de_actividades_PM","Periodo_Lectivo","Suspensión_de_evaluaciones","Ceremonia","EDDA","Evaluación","Ayudantías","Hito_Académico","Secretaría_Académica","OAI",]
     data={
         "Segmentos":segmentos,
-        "Tipos":tipos
+        "Tipos":tipos,
+        "respuestaSegmento":respuestaSegmento,
+        "respuestaTipo":respuestaTipo,
     }
     return render(request, 'nuestrapp/base.html',data)
