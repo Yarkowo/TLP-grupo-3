@@ -1,29 +1,41 @@
 <table class="table">
     <thead>
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col">Hito</th>
+        <th scope="col">Fecha Inicio</th>
+        <th scope="col">Fecha Termino</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Segmento</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="table-group-divider">
+      {% for actividad in actividades %}
       <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+        <td>{{actividad.hito}}</td>
+        <td>{{actividad.FechaInicio}}</td>
+        <td>{{actividad.FechaTermino}}</td>
+        <td>{{actividad.Tipo}}</td>
+        <td>{{actividad.Segmento}}</td>
+      </tr>
+      {% endfor %}
+      <tr>
+        <td>hito</td>
+        <td>fecha inicio</td>
+        <td>fecha termino</td>
+        <td>tipo</td>
+        <td>segmento</td>
       </tr>
       <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
+        <td>hito2</td>
+        <td>fecha inicio2</td>
+        <td>fecha termino2</td>
+        <td>tipo2</td>
+        <td>segmento2</td>
       </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
+      <td>actividad.hito</td>
+        <td>actividad.FechaInicio</td>
+        <td>actividad.FechaTermino</td>
+        <td>actividad.Tipo</td>
+        <td>actividad.Segmento</td>
     </tbody>
   </table>
