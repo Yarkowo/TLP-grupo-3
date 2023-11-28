@@ -55,6 +55,14 @@ def index(request):
         actividades = Evento.objects.filter(tipo_tipo=tipos[respuestaTipo])
 
     #fin_filtro
+    actividades_siguientes = []
+    c=0
+    if (mostrar==True):
+        for event in Evento.objects.filter(tipo_segmento=segmento_usuario).order_by('-fecha_termino'):
+            if (c  < 3):
+                actividades_siguientes.append(event)
+            c+=1
+        
 
     data={
         "actividades":actividades,
@@ -64,6 +72,7 @@ def index(request):
         "respuestaTipo":respuestaTipo,
         "Usuario":Usuario,
         "mostrar":mostrar,
+        "actividades_siguientes":actividades_siguientes,
     }
     return render(request, 'nuestrapp/base.html',data)
 
