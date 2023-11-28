@@ -33,16 +33,16 @@ def index(request):
     #filtro
     if (respuestaSegmento == 'Segmento' or respuestaSegmento == None) and (respuestaTipo == 'Tipo' or respuestaTipo == None): #Segmento none / Tipo none
         actividades = Evento.objects.all()
-        print("filtro None/None")
+
     elif (respuestaSegmento != 'Segmento') and (respuestaTipo != 'Tipo'): #Segmento [X] / Tipo [X]
         actividades = Evento.objects.filter(tipo_tipo=tipos[respuestaTipo]).filter(tipo_segmento=segmentos[respuestaSegmento])
-        print("filtro Segmento/Tipo")
+
     elif (respuestaSegmento != 'Segmento') and (respuestaTipo == 'Tipo' or respuestaTipo == None): #Segmento [X] / Tipo none
         actividades = Evento.objects.filter(tipo_segmento=segmentos[respuestaSegmento])
-        print("filtro Segmento/None")
+
     elif (respuestaSegmento == 'Segmento' or respuestaSegmento == None) and (respuestaTipo != 'Tipo'): #Segmento none / Tipo [X]
         actividades = Evento.objects.filter(tipo_tipo=tipos[respuestaTipo])
-        print("filtro None/Tipo")
+
     #fin_filtro
 
     data={
