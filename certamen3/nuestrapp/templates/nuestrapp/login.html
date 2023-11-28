@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
 </head>
 <body>
     <div class="row">
-        <div class="col-2"><p>PESTAÑA DE LOGEO :v</p></div>
+        <div class="col-2"><p>Ingrese sus Datos</p></div>
         <div class="col"></div>
     </div>
     <div class="row">
@@ -15,28 +15,32 @@
         <div class="col-8">
             {% if si != 2 %}
             <form action="{% url 'login' %}" method="get">
-                <label for="usuario">Nombre de usuario:</label>
+                <label for="usuario" style="min-width: 200px;">Nombre de usuario:</label>
                 <input type="text" id="usuario" name="usuario">
+                <br><br>
                 <label for="contraseña">Contraseña:</label>
                 <input type="text" id="contraseña" name="contraseña">
-                <input type="submit" value="Submit">
+                <br>
+                <br>
+                <input type="submit" value="Entrar">
+            </form>
+
+            <form action="{% url 'index' %}">
+                <br>
+                <input type="submit" value="Entrar como invitado">
             </form>
             {%endif%}
 
             {% if si == 3 %}
-            <p>DATOS INCORRECTOS :v</p>
+            <p>Acceso Denegado.</p>
             {%endif%}
 
             {% if si == 2 %}
-            <p>LOGEO EXITOSO :V</p>
+            <p>Acceso Concedido.</p>
             <form action="{% url 'index' %}">
-                <input type="submit" value="Submit">
+                <input type="submit" value="Continuar">
             </form>
             {% endif %}
-            
-            <form action="{% url 'index' %}">
-                <input type="submit" value="Entrar como invitado">
-            </form>
         </div>
         <div class="col-2"></div>
     </div>

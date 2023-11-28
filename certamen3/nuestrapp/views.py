@@ -39,8 +39,6 @@ def index(request):
             "OAI":'OAI',
         }
     
-    #en cuashro mami en cuashor
-
     #filtro
     if (respuestaSegmento == 'Segmento' or respuestaSegmento == None) and (respuestaTipo == 'Tipo' or respuestaTipo == None): #Segmento none / Tipo none
         actividades = Evento.objects.all()
