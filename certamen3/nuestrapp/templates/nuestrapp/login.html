@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="row">
+        <div class="col-2"><p>PESTAÑA DE LOGEO :v</p></div>
+        <div class="col"></div>
+    </div>
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            {% if si != 2 %}
+            <form action="{% url 'login' %}" method="get">
+                <label for="usuario">Nombre de usuario:</label>
+                <input type="text" id="usuario" name="usuario">
+                <label for="contraseña">Contraseña:</label>
+                <input type="text" id="contraseña" name="contraseña">
+                <input type="submit" value="Submit">
+            </form>
+            {%endif%}
+
+            {% if si == 3 %}
+            <p>DATOS INCORRECTOS :v</p>
+            {%endif%}
+
+            {% if si == 2 %}
+            <p>LOGEO EXITOSO :V</p>
+            <form action="{% url 'index' %}">
+                <input type="submit" value="Submit">
+            </form>
+            {% endif %}
+            
+            <form action="{% url 'index' %}">
+                <input type="submit" value="Entrar como invitado">
+            </form>
+        </div>
+        <div class="col-2"></div>
+    </div>
+    
+</body>
+</html>

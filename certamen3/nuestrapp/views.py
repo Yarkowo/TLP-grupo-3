@@ -1,5 +1,8 @@
+from .models import Evento, User
 from django.shortcuts import render
-from .models import Evento
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.hashers import make_password
+from django.contrib.auth.hashers import check_password
 
 # Create your views here.
 
@@ -7,6 +10,8 @@ def index(request):
 
     respuestaSegmento = request.GET.get('Segmento')
     respuestaTipo = request.GET.get('Tipo')
+
+    Usuario = request.user
 
     segmentos={"Comunidad_USM":'C',
                 "Estudiante":'E',
@@ -51,5 +56,29 @@ def index(request):
         "Tipos":tipos,
         "respuestaSegmento":respuestaSegmento,
         "respuestaTipo":respuestaTipo,
+        "Usuario":Usuario,
     }
     return render(request, 'nuestrapp/base.html',data)
+
+def login(request):
+    users = []
+    nombre = request.GET.get('usuario')
+    contraseña = request.GET.get('contraseña')
+    logeado = 1
+    if (nombre != None) and (contraseña!=None):
+        logeado = 3
+
+    for u in User.objects.all():
+        users.append((u.username,u.password))
+
+    for usuario in users:
+        if usuario[0] == nombre:
+            if check_password(contraseña,usuario[1]):
+                logeado = 2
+    data={
+        "Usuarios":users,
+        "con":contraseña,
+        "nombre":nombre,
+        "si":logeado
+    }
+    return render(request,"nuestrapp/login.html",data)
