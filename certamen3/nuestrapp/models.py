@@ -36,3 +36,6 @@ class Evento(models.Model):
 class UsuarioSegmento(models.Model):
     usuario = models.OneToOneField(User, on_delete=models.CASCADE)
     tipo_segmento = models.CharField(max_length=10,choices=TIPO_SEGMENTO,default="C")
+    def __str__(self):
+        return self.usuario
+    

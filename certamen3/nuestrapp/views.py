@@ -1,4 +1,4 @@
-from .models import Evento, User
+from .models import Evento, User, UsuarioSegmento
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.hashers import make_password
@@ -10,6 +10,12 @@ def index(request):
 
     respuestaSegmento = request.GET.get('Segmento')
     respuestaTipo = request.GET.get('Tipo')
+    mostrar = False
+    for u in UsuarioSegmento.objects.all():
+        if u.usuario == request.user:
+            segmento_usuario = u.tipo_segmento
+            if (segmento_usuario in ["P","J"]):
+                mostrar = True
 
     Usuario = request.user
 
@@ -57,6 +63,7 @@ def index(request):
         "respuestaSegmento":respuestaSegmento,
         "respuestaTipo":respuestaTipo,
         "Usuario":Usuario,
+        "mostrar":mostrar,
     }
     return render(request, 'nuestrapp/base.html',data)
 
