@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'nuestrapp',
     'rest',
     'rest_framework',
+    'multiselectfield',
 ]
 
 MIDDLEWARE = [

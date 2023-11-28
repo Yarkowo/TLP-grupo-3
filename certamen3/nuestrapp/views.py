@@ -46,13 +46,13 @@ def index(request):
         actividades = Evento.objects.all()
 
     elif (respuestaSegmento != 'Segmento') and (respuestaTipo != 'Tipo'): #Segmento [X] / Tipo [X]
-        actividades = Evento.objects.filter(tipo_tipo=tipos[respuestaTipo]).filter(tipo_segmento=segmentos[respuestaSegmento])
+        actividades = Evento.objects.filter(tipo_tipo__contains=tipos[respuestaTipo]).filter(tipo_segmento__contains=segmentos[respuestaSegmento])
 
     elif (respuestaSegmento != 'Segmento') and (respuestaTipo == 'Tipo' or respuestaTipo == None): #Segmento [X] / Tipo none
-        actividades = Evento.objects.filter(tipo_segmento=segmentos[respuestaSegmento])
+        actividades = Evento.objects.filter(tipo_segmento__contains=segmentos[respuestaSegmento])
 
     elif (respuestaSegmento == 'Segmento' or respuestaSegmento == None) and (respuestaTipo != 'Tipo'): #Segmento none / Tipo [X]
-        actividades = Evento.objects.filter(tipo_tipo=tipos[respuestaTipo])
+        actividades = Evento.objects.filter(tipo_tipo__contains=tipos[respuestaTipo])
 
     #fin_filtro
     actividades_siguientes = []
