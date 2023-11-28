@@ -3,10 +3,18 @@
     min-height: 50px;
     max-height: fit-content;
 }
+#inicio p{
+    color:white;
+    text-align: left;
+}
+
+#inicio .btn{
+    background-color: #F7AE00;
+    align-items: right;
+}
 
 body{
     font-family: Roboto Condensed;
-    
 }
 
 .row{
@@ -27,8 +35,9 @@ body{
     margin-left: auto;
     margin-right: auto;
     width: auto;
-
 }
+
+
 #calendario{
     background-color:white;
     text-align: center;
