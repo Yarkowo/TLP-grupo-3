@@ -7,26 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendario Anual</title>
     <link rel="stylesheet" href="{%static 'nuestrapp/css/bootstrap.css'%}">
-    <link rel="stylesheet" href="{%static 'nuestrapp/css/estilos.css'%}">
+    <link rel="stylesheet" href="{%static 'nuestrapp/css/estiloss.css'%}">
+    <link href='https://fonts.googleapis.com/css?family=Roboto Condensed' rel='stylesheet'>
 </head>
 <body>
-    <p>usuario = {{user}}, segmento = {{segmento}}</p>
-    <div class="container fluid">
+    <p style="background-color: #004B85;">usuario = {{user}}, segmento = {{segmento}}</p>
+    <div class="container-fluid">
         <div class="row" id="logo">
-            logo
+            <img class="text-center" src="https://comunicaciones.usm.cl/wp-content/uploads/2023/09/logo_ref_horizontal_u.png" alt="logo usm">
         </div>
         <div class="row" id="calendario">
             {% include 'nuestrapp/calendario.html' %}
         </div>
-        <div class="row" id="eventos">
+        <!-- { if mostrar==True } -->
             {% include 'nuestrapp/eventos.html' %}
-        </div>
-        <div class="row" id="filtro">
+
+        <!--{ endif } -->
             {% include 'nuestrapp/filtro.html' %}
-        </div>
-        <div class="row" id="actividades">
+
+
             {% include 'nuestrapp/tabla.html' %}
-        </div>
+
         <footer>
             [footer]
         </footer>

@@ -1,22 +1,27 @@
-<table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Hito</th>
-        <th scope="col">Fecha Inicio</th>
-        <th scope="col">Fecha Termino</th>
-        <th scope="col">Tipo</th>
-        <th scope="col">Segmento</th>
-      </tr>
-    </thead>
-    <tbody class="table-group-divider">
-      {% for actividad in actividades %}
-      <tr>
-        <td>{{actividad.titulo}}</td>
-        <td>{{actividad.fecha_inicio}}</td>
-        <td>{{actividad.fecha_termino}}</td>
-        <td>{{actividad.get_tipo_tipo_display}}</td>
-        <td>{{actividad.get_tipo_segmento_display}}</td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+<div class="row" id="tabla_titulo">
+  <h5>actividades</h5>
+</div>
+<div class="row">
+<table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Hito</th>
+          <th scope="col">Fecha Inicio</th>
+          <th scope="col">Fecha Termino</th>
+          <th scope="col">Tipo</th>
+          <th scope="col">Segmento</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        {% for actividad in actividades %}
+        <tr>
+          <td>{{actividad.titulo}}</td>
+          <td>{{actividad.fecha_inicio}}</td>
+          <td>{{actividad.fecha_termino}}</td>
+          <td>{{actividad.get_tipo_tipo_display}}</td>
+          <td>{{actividad.get_tipo_segmento_display}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+</div>
