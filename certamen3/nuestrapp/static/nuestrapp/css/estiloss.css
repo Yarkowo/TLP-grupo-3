@@ -1,0 +1,64 @@
+#inicio{
+    background-color: #004B85;
+    min-height: 50px;
+    max-height: fit-content;
+}
+#inicio p{
+    color:white;
+    text-align: left;
+}
+
+#inicio .btn{
+    background-color: #F7AE00;
+    align-items: right;
+}
+
+body{
+    font-family: Roboto Condensed;
+}
+
+.row{
+    text-align: center;
+    align-items:center;
+    margin: 0;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+}
+
+#logo{
+    background-color: white;
+    padding-top: 0vw;
+    padding-bottom: 0vw;
+}
+#logo img{
+    height: 12vw;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+}
+
+
+#calendario{
+    background-color:white;
+    text-align: center;
+}
+#evento{
+    background-color: white;
+}
+#filtro{
+    background-color:white;
+}
+.form-select{
+    background-color: white;
+}
+#tabla_titulo{
+    background-color: #F7AE00;
+}
+#actividades{
+    background-color:white;
+}
+footer{
+    background-color:#004B85;
+    min-height: 100px;
+    max-height: fit-content;
+}
