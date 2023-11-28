@@ -1,0 +1,13 @@
+<div class="row row-cols-1 row-cols-md-3 g-4" id="evento">
+  {% for evento in actividades_siguientes %}
+  <div class="col">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title">{{evento.titulo}}</h5>
+        <p class="card-text">{{evento.descripcion}}</p>
+        <h5 class="card-title">{{evento.fecha_termino}}</h5>
+      </div>
+    </div>
+  </div>
+  {%endfor%}
+</div>

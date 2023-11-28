@@ -1,0 +1,23 @@
+<div class="row" id="filtro">
+    <div class="col-1"></div>
+    <div class="col-5">
+        <form method="GET" action="">
+            <select class="form-select" aria-label="Default select example" name="Segmento" onchange="this.form.submit()">
+                <option value="Segmento" {% if respuestaSegmento == Segmento %} selected {% endif %}>Segmento</option>
+                {%for Segmento in Segmentos%}
+                <option value={{Segmento}} {% if respuestaSegmento == Segmento %} selected {% endif %} >{{Segmento}}</option>
+                {%endfor%}
+            </select>
+    </div>
+
+    <div class="col-5">
+            <select class="form-select" aria-label="Default select example"  name="Tipo" onchange="this.form.submit()">
+                <option value="Tipo"{% if respuestaTipo == Tipo %} selected {% endif %}>Tipo</option>
+                {%for Tipo in Tipos%}
+                <option value={{Tipo}} {% if respuestaTipo == Tipo %} selected {% endif %} >{{Tipo}}</option>
+                {%endfor%}
+            </select>
+        </form>
+    </div>
+    <div class="col-1"></div>
+</div>
