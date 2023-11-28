@@ -1,3 +1,9 @@
+#inicio{
+    background-color: #004B85;
+    min-height: 50px;
+    max-height: fit-content;
+}
+
 body{
     font-family: Roboto Condensed;
     

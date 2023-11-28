@@ -5,7 +5,7 @@
             <select class="form-select" aria-label="Default select example" name="Segmento" onchange="this.form.submit()">
                 <option value="Segmento" {% if respuestaSegmento == Segmento %} selected {% endif %}>Segmento</option>
                 {%for Segmento in Segmentos%}
-                <option value={{Segmento}} {% if respuestaSegmento == Segmento %} selected {% endif %} >{{Segmento}} {{respuestaSegmento}}</option>
+                <option value={{Segmento}} {% if respuestaSegmento == Segmento %} selected {% endif %} >{{Segmento}}</option>
                 {%endfor%}
             </select>
     </div>
