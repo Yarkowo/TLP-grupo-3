@@ -58,14 +58,14 @@ def index(request):
     actividades_siguientes = []
     c=0
     if (mostrar==True):
-        for event in Evento.objects.filter(tipo_segmento=segmento_usuario).order_by('-fecha_termino'):
+        for event in Evento.objects.filter(tipo_segmento=segmento_usuario).order_by('-fecha_termino').reverse():
             if (c  < 3):
                 actividades_siguientes.append(event)
             c+=1
         
 
     data={
-        "actividades":actividades,
+        "actividades":actividades.order_by('-fecha_inicio').reverse(),
         "Segmentos":segmentos,
         "Tipos":tipos,
         "respuestaSegmento":respuestaSegmento,

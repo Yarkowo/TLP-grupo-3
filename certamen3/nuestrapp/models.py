@@ -22,10 +22,12 @@ class Evento(models.Model):
     )    
     tipo_tipo = models.CharField(max_length=10,choices=TIPO_TIPO,default="F")
     tipo_segmento = models.CharField(max_length=10,choices=TIPO_SEGMENTO,default="C")
+    def __str__(self) -> str:
+        return self.titulo
 
 class UsuarioSegmento(models.Model):
     usuario = models.OneToOneField(User, on_delete=models.CASCADE)
     tipo_segmento = models.CharField(max_length=10,choices=TIPO_SEGMENTO,default="C")
     def __str__(self):
-        return self.usuario
+        return self.usuario.username
     
