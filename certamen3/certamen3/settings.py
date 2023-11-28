@@ -37,7 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
     'nuestrapp'
+=======
+    'nuestrapp',
+    'rest',
+    'rest_framework',
+>>>>>>> rest
 ]
 
 MIDDLEWARE = [
