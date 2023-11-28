@@ -1,13 +1,5 @@
 from .models import Evento, User, UsuarioSegmento
 from django.shortcuts import render
-<<<<<<< HEAD
-from .models import *
-from django.contrib.auth.models import User
-# Create your views here.
-
-def index(request):
-    return render(request, 'nuestrapp/base.html')
-=======
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.hashers import check_password
@@ -97,4 +89,3 @@ def login(request):
         "si":logeado
     }
     return render(request,"nuestrapp/login.html",data)
->>>>>>> rest
