@@ -1,29 +1,22 @@
 <table class="table">
     <thead>
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col">Hito</th>
+        <th scope="col">Fecha Inicio</th>
+        <th scope="col">Fecha Termino</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Segmento</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="table-group-divider">
+      {% for actividad in actividades %}
       <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+        <td>{{actividad.titulo}}</td>
+        <td>{{actividad.fecha_inicio}}</td>
+        <td>{{actividad.fecha_termino}}</td>
+        <td>{{actividad.get_tipo_tipo_display}}</td>
+        <td>{{actividad.get_tipo_segmento_display}}</td>
       </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
+      {% endfor %}
     </tbody>
   </table>
