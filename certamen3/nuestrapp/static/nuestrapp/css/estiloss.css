@@ -15,26 +15,20 @@
 
 body{
     font-family: Roboto Condensed;
+    background-color: #000000;
 }
 
 .row{
     text-align: center;
     align-items:center;
     margin: 0;
-    padding-top: 1vw;
-    padding-bottom: 1vw;
 }
 
 #logo{
     background-color: white;
-    padding-top: 0vw;
-    padding-bottom: 0vw;
 }
 #logo img{
     height: 12vw;
-    margin-left: auto;
-    margin-right: auto;
-    width: auto;
 }
 
 
@@ -59,6 +53,10 @@ body{
 }
 footer{
     background-color:#004B85;
-    min-height: 100px;
+    min-height:80px;
     max-height: fit-content;
+}
+
+.borde{
+    min-height: 0.5vh;
 }
